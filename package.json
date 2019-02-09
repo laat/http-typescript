@@ -1,0 +1,14 @@
+{
+  "name": "http-typescript-repo",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Sigurd Fosseng <sigurd@fosseng.net>",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.11.0"
+  }
+}
