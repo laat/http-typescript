@@ -1,3 +1,3 @@
 import expect from "expect";
-import { toMatchType } from "http-typescript/src/jest/toMatchType";
+import { toMatchType } from "http-typescript";
 expect.extend({ toMatchType });

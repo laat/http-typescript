@@ -1,17 +1,20 @@
 {
-  "private": true,
   "name": "http-bin-contracts",
   "version": "0.0.0",
+  "private": true,
   "license": "MIT",
+  "files": [
+    "**/*.d.ts",
+    "**/*.schema.json"
+  ],
   "main": "index.js",
   "scripts": {
-    "compile": "tsc --project tsconfig.release.json",
-    "http-ts": "../../packages/http-typescript/src/cli.js",
-    "new": "yarn http-ts new",
+    "compile": "tsc --project tsconfig.release.json && yarn gen-schema",
+    "gen-schema": "http-ts gen-schema",
+    "new": "http-ts new",
     "test": "jest",
-    "gen-schema": "yarn http-ts gen-schema",
     "test-production": "bash test-production.sh",
-    "validate": "yarn http-ts validate"
+    "validate": "http-ts validate"
   },
   "devDependencies": {
     "@types/expect": "^1.20.3",
@@ -21,9 +24,5 @@
     "jest": ">=22.0.0 <24.0.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.3.3"
-  },
-  "files": [
-    "**/*.d.ts",
-    "**/*.schema.json"
-  ]
+  }
 }

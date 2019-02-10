@@ -2,8 +2,11 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
     "skipLibCheck": true,
     "strict": true,
+    "declaration": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   }
