@@ -9,6 +9,7 @@
     "http-ts": "../../packages/http-typescript/src/cli.js",
     "new": "yarn http-ts new",
     "test": "jest",
+    "gen-schema": "yarn http-ts gen-schema",
     "test-production": "bash test-production.sh",
     "validate": "yarn http-ts validate"
   },

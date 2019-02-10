@@ -3,7 +3,7 @@ import chalk from "chalk";
 import path from "path";
 import getStdin from "get-stdin";
 import loadJsonFile from "load-json-file";
-import { validateTypes } from "../validateTypes";
+import { validateTypes } from "../http-ts-lib";
 
 export const command = "validate <types-file> [<json-file>]";
 

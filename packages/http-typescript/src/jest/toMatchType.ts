@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import { matcherHint } from "jest-matcher-utils";
-import { validateTypes } from "../validateTypes";
+import { validateTypes } from "../http-ts-lib";
 
 declare global {
   namespace jest {
