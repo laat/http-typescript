@@ -2,7 +2,7 @@
 
 Generate typings for a new endpoint with
 
-`yarn new`
+`yarn new` example `yarn new DELETE /delay/{delay}`
 
 Test typings against fixtures
 
