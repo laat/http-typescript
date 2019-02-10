@@ -5,6 +5,6 @@
  * {{method}} /{{pathname}}
  * Accept: application/json
  */
-export interface GetResponse {
+export interface Response {
   todo: string;
 }

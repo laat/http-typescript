@@ -6,12 +6,9 @@ import {
   ResponseTemplate,
   ResponseTestTemplate
 } from "../templates";
-import fs from "fs";
-import util from "util";
 import path from "path";
-import prettier from "prettier";
-const writeFile = util.promisify(fs.writeFile);
-const exists = util.promisify(fs.exists);
+import { checkDoesNotExist } from "../helpers/checkDoesNotExist";
+import { writeTsFile, writeJsonFile } from "../helpers/writeFile";
 interface NewArgs {
   method: HTTPMethod;
   pathname: string;
@@ -46,61 +43,40 @@ export const builder: CommandBuilder = yargs =>
 
 export const handler = async (args: NewArgs) => {
   const fixturesPath = path.join(args.pathname, "__fixtures__");
+  const filePrefix = `${args.method}.v${args.apiVersion}`;
   const responseTestFixturePath = path.join(
     fixturesPath,
-    `GET.v${args.apiVersion}.test.json`
+    `${filePrefix}.test.json`
   );
-  const responseTsPath = path.join(args.pathname, `GET.v${args.apiVersion}.ts`);
-  const responseTestTsPath = path.join(
-    args.pathname,
-    `GET.v${args.apiVersion}.test.ts`
-  );
-  if (await exists(responseTsPath)) {
-    console.error(`ERROR: "${responseTsPath}" already exits`);
-    return process.exit(1);
-  }
-  if (await exists(responseTestTsPath)) {
-    console.error(`ERROR: "${responseTestTsPath}" already exits`);
-    return process.exit(1);
-  }
-  if (await exists(responseTestFixturePath)) {
-    console.error(`ERROR: "${responseTestFixturePath}" already exits`);
-    return process.exit(1);
-  }
+  const responseTsPath = path.join(args.pathname, `${filePrefix}.ts`);
+  const responseTestTsPath = path.join(args.pathname, `${filePrefix}.test.ts`);
+
+  checkDoesNotExist(responseTsPath);
+  checkDoesNotExist(responseTestTsPath);
+  checkDoesNotExist(responseTestFixturePath);
+
   await makeDir(args.pathname);
   await makeDir(fixturesPath);
-  await writeFile(
+  await writeTsFile(
     responseTsPath,
-    prettier.format(
-      ResponseTemplate({
-        method: args.method,
-        version: args.apiVersion,
-        pathname: args.pathname
-      }),
-      { parser: "typescript" }
-    ),
-    "utf8"
+    ResponseTemplate({
+      method: args.method,
+      version: args.apiVersion,
+      pathname: args.pathname
+    })
   );
-  await writeFile(
+  await writeTsFile(
     responseTestTsPath,
-    prettier.format(
-      ResponseTestTemplate({
-        method: args.method,
-        version: args.apiVersion,
-        pathname: args.pathname
-      }),
-      { parser: "typescript" }
-    ),
-    "utf8"
+    ResponseTestTemplate({
+      method: args.method,
+      version: args.apiVersion,
+      pathname: args.pathname
+    })
   );
-  await writeFile(
+  await writeJsonFile(
     responseTestFixturePath,
-    prettier.format(
-      JSON.stringify({
-        todo: "example response goes here."
-      }),
-      { parser: "json" }
-    ),
-    "utf8"
+    JSON.stringify({
+      todo: "example response goes here."
+    })
   );
 };

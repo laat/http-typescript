@@ -36,7 +36,7 @@ export const handler = async (
   }
   const { pass, validation } = validateTypes(
     [args.typesFile],
-    "GetResponse",
+    "Response",
     json
   );
   if (pass) {
