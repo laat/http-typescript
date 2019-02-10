@@ -4,6 +4,6 @@
 
 ## TODO
 
-- [ ] create example
+- [x] create example
 - [ ] generate json schema in a command `gen-schema`
 - [ ] generate postman project in a command `gen-postman`
