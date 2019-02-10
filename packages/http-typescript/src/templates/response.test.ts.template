@@ -1,7 +1,7 @@
-describe("{{method}} v{{version}} /{{pathname}}/", () => {
+describe("{{method}} v{{version}} /{{pathname}}", () => {
   it('should match example json to TypeScript definition', () => {
     expect(require('./__fixtures__/{{method}}.v{{version}}.test.json')).toMatchType(
-      'GetResponse',
+      'Response',
       require.resolve('./{{method}}.v{{version}}.ts')
     );
   });

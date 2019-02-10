@@ -1,0 +1,19 @@
+{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "application/json",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "nb,en-US;q=0.9,en;q=0.8,nb-NO;q=0.7",
+    "Connection": "close",
+    "Cookie": "_gauges_unique_month=1; _gauges_unique_year=1; _gauges_unique=1; _gauges_unique_hour=1; _gauges_unique_day=1",
+    "Dnt": "1",
+    "Host": "httpbin.org",
+    "Referer": "https://httpbin.org/",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
+  },
+  "origin": "127.0.0.1",
+  "url": "https://httpbin.org/delay/1"
+}

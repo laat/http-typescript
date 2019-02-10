@@ -1,13 +1,15 @@
 {
   "name": "http-bin",
   "version": "0.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
-    "new": "yarn http-ts new",
-    "validate": "yarn http-ts validate",
+    "compile": "tsc --project tsconfig.release.json",
     "http-ts": "../../packages/http-typescript/src/cli.js",
-    "test-production": "bash .scripts/test-production.sh"
+    "new": "yarn http-ts new",
+    "test": "jest",
+    "test-production": "bash test-production.sh",
+    "validate": "yarn http-ts validate"
   },
   "devDependencies": {
     "@types/expect": "^1.20.3",
@@ -17,5 +19,8 @@
     "jest": ">=22.0.0 <24.0.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.3.3"
-  }
+  },
+  "files": [
+    "**/*.d.ts"
+  ]
 }
