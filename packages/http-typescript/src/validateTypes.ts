@@ -1,4 +1,4 @@
-import Ajv from "ajv";
+import Ajv = require("ajv");
 import * as TJS from "typescript-json-schema";
 
 export function validateTypes(

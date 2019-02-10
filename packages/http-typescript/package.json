@@ -2,7 +2,7 @@
   "name": "http-typescript",
   "version": "0.0.0",
   "bin": {
-    "http-ts": "cli.js"
+    "http-ts": "src/cli.js"
   },
   "license": "MIT",
   "devDependencies": {

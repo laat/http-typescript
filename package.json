@@ -6,7 +6,8 @@
   "author": "Sigurd Fosseng <sigurd@fosseng.net>",
   "main": "index.js",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "devDependencies": {
     "lerna": "^3.11.0",
