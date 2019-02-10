@@ -11,3 +11,17 @@ Test typings against fixtures
 Test typings against production
 
 `yarn test-production`
+
+## Usage
+
+```ts
+import { Response } from "http-bin/delay/{delay}/GET.v1.0";
+
+const delayedRequest = async (delay: number): Response => {
+  const response = fetch(`https://httpbin.org/delay/${delay}`);
+  if (!response.ok) {
+    throw new Error("failed");
+  }
+  return response.json();
+};
+```
