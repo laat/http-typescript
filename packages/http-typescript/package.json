@@ -18,14 +18,17 @@
   "dependencies": {
     "@types/ajv": "^1.0.0",
     "@types/chalk": "^2.2.0",
+    "@types/get-stdin": "^5.0.1",
     "@types/jest-matcher-utils": "^21.0.1",
     "ajv": "^6.9.1",
-    "jest-matcher-utils": "^24.0.0",
-    "typescript-json-schema": "^0.35.0",
     "execa": "^1.0.0",
+    "get-stdin": "^6.0.0",
     "handlebars": "^4.1.0",
+    "jest-matcher-utils": "^24.0.0",
+    "load-json-file": "^5.1.0",
     "make-dir": "^2.0.0",
     "prettier": "^1.16.4",
+    "typescript-json-schema": "^0.35.0",
     "yargs": "^12.0.5"
   }
 }

@@ -24,7 +24,7 @@ export function validateTypes(
   const ajv = new Ajv({
     allErrors: true
   });
-  const validate = ajv.compile(schema);
-  const pass = validate(received);
-  return { pass, validate };
+  const validation = ajv.compile(schema);
+  const pass = validation(received);
+  return { pass, validation };
 }

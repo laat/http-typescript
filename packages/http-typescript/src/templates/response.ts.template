@@ -6,5 +6,5 @@
  * Accept: application/json
  */
 export interface GetResponse {
-  // TODO
+  todo: string;
 }

@@ -9,9 +9,10 @@ declare global {
       /**
        * match object against a typescript type
        * @param type TypeScript type to match against
-       * @param files Absolute paths to files to include when finding the type
+       * @param file Absolute paths to file to include when finding the type
+       * @param extraFiles Absolute paths to files to include when finding the type
        */
-      toMatchType(type: string, ...files: string[]): R;
+      toMatchType(type: string, file: string, ...extraFiles: string[]): R;
     }
   }
 }
@@ -22,7 +23,7 @@ export const toMatchType: any = (
   file: string,
   ...extraFiles: string[]
 ): any => {
-  const { pass, validate } = validateTypes(
+  const { pass, validation } = validateTypes(
     [file, ...extraFiles],
     type,
     received
@@ -37,7 +38,7 @@ export const toMatchType: any = (
         )}\n\nExpected value not to match type`
     : () => {
         let messageToPrint = `received\n`;
-        const errors = validate.errors || [];
+        const errors = validation.errors || [];
         errors.forEach(error => {
           let line = `${error.dataPath} ${error.message}`;
 
