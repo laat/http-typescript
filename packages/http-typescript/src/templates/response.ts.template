@@ -1,0 +1,10 @@
+/**
+ * @version {{version}}
+ *
+ * @example
+ * {{method}} /{{pathname}}
+ * Accept: application/json
+ */
+export interface GetResponse {
+  // TODO
+}
