@@ -23,6 +23,7 @@
     "typescript": "^3.3.3"
   },
   "files": [
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "**/*.schema.json"
   ]
 }
